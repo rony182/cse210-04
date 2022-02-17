@@ -46,37 +46,100 @@ class Actor()
   _position: Point
   _velocity: Point
 
-get_color(): color
-get_font_size(): int
-get_text(): string
-get_position(): Point
-get_velocity(): Point
-move_next(int): None
-set_position(Point):None
-set_color(Color):None
-set_font_size(int): None
-set_velocity(int): None
+  get_color(): color
+  get_font_size(): int
+  get_text(): string
+  get_position(): Point
+  get_velocity(): Point
+  move_next(int): None
+  set_position(Point):None
+  set_color(Color):None
+  set_font_size(int): None
+  set_velocity(int): None
 -----
 class Cast()
   _actors: dictionary
   _score: int
 
-add_actor(str, Actor)
-get_actors(str): List <str>
-get_all_actors(): List <str>   
-get_first_actor(str): List <str>
-remove_actor(str, Actor): None
-update_score(): None
-get_score(): int
+  add_actor(str, Actor)
+  get_actors(str): List <str>
+  get_all_actors(): List <str>   
+  get_first_actor(str): List <str>
+  remove_actor(str, Actor): None
+  move_artifacts(Position): None
+
+  
+  
 ------
 class Artifact(Actor)
   super().__init__()
   _value: int (attribute set inside the constructor)
-    
+  
   get_value():
-  move_actifacts(Position): None
+  
 -------
+class director()
+  _keyboard_service: KeyboardService (__init__)
+  _video_service: VideoService (__init__)
 
+  start_game(Cast): None
+  _get_inputs(Cast): None
+  _do_updates(Cast): None
+  _do_outputs(Cast): None
+  _update_score(int): None
+
+_______
+
+class KeyboardService()
+  _cell_sizes: int
+
+  get_direction(): Point
+
+_______
+
+class VideoService()
+  _caption: str(__init__)
+  _width: int(__init__)
+  _heigh: int(__init__)
+  _cell_size: int(__init__)
+  _frame_rate: int(__init__)
+  _debug: boolean(__init__)
+
+  close_window(): None
+  clear_buffer(): None
+  draw_actor(): None
+  draw_actors(): None
+  flush_buffer(): None
+  get_cell_size(): int
+  get_heigh(): int
+  get_width(): int
+  is_window_open(): boolean
+  open_window(): None
+  _draw_grid(): None
+
+_______
+
+class Color()
+  _red: int
+  _green: int
+  _blue: int
+  _alpha: int
+
+  to_tuple(): Tuple
+
+______
+
+class Point()
+  _x: int
+  _y: int
+
+  add(Point): Point
+  equals(Point): boolean
+  get_x(): int
+  get_y(): int
+  scale(int): Point
+
+  
 
 
 ## Required Technologies
