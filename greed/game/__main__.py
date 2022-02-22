@@ -53,7 +53,7 @@ def main():
     # Create the artifacts (gems/rocks)
     artifacts = {"o": -1, "*": 1}
 
-    for n in range(DEFAULT_ARTIFACTS):
+    for _ in range(DEFAULT_ARTIFACTS):
         text = random.choice(artifacts)
         value = artifacts[text]
 
