@@ -54,7 +54,7 @@ def main():
     artifacts = {"o": -1, "*": 1}
 
     for _ in range(DEFAULT_ARTIFACTS):
-        text = random.choice(artifacts)
+        text = random.choice(list(artifacts))
         value = artifacts[text]
 
         x = random.randint(1, COLS - 1)
