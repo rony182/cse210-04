@@ -32,7 +32,7 @@ def main():
     
     # Create the banner
     banner = Actor()
-    banner.set_text("Points: 600")
+    banner.set_text("600")
     banner.set_font_size(FONT_SIZE)
     banner.set_color(WHITE)
     banner.set_position(Point(CELL_SIZE, 0))
