@@ -18,7 +18,7 @@ FRAME_RATE = 12
 MAX_X = 900
 MAX_Y = 600
 CELL_SIZE = 15
-FONT_SIZE = 15
+FONT_SIZE = 20
 COLS = 60
 ROWS = 40
 CAPTION = "Greed"
@@ -32,7 +32,7 @@ def main():
     
     # Create the banner
     banner = Actor()
-    banner.set_text("600")
+    banner.set_text("Score: 50")
     banner.set_font_size(FONT_SIZE)
     banner.set_color(WHITE)
     banner.set_position(Point(CELL_SIZE, 0))
@@ -40,7 +40,7 @@ def main():
     
     # Create the player's character
     x = int(MAX_X / 2)
-    y = int(MAX_Y)
+    y = int(MAX_Y - 50)
     position = Point(x, y)
 
     player = Actor()
@@ -73,7 +73,7 @@ def main():
         artifact.set_color(color)
         artifact.set_position(position)
         # Added velocity for artifact
-        artifact.set_velocity(Point(0, -1))
+        artifact.set_velocity(Point(0, 1))
         cast.add_actor("artifacts", artifact)
     
     # Start the game
