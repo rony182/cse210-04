@@ -76,6 +76,7 @@ class Director:
                 banner.set_text(f"Score: {str(points)}")
                 # Remove the artifact
                 cast.remove_actor("artifacts", artifact)
+
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
