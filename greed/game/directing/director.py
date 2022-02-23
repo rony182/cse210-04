@@ -53,7 +53,7 @@ class Director:
         player = cast.get_first_actor("players")
         artifacts = cast.get_actors("artifacts")
 
-        banner.set_text("")
+        # banner.set_text("")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         player.move_next(max_x, max_y)
@@ -68,11 +68,14 @@ class Director:
                 value = artifact.get_value()
                 # banner.set_text(message)    
                 # Get the banner text as an int
-                points = int(banner.get_text())
+                s = banner.get_text().split()
+                points = int(s[1])
                 # Add the new value (rock or gem)
                 points += value
                 # Update banner's text
-                banner.set_text(str(points))
+                banner.set_text(f"Score: {str(points)}")
+                # Remove the artifact
+                cast.remove_actor("artifacts", artifact)
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
