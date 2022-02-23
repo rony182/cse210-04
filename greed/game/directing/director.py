@@ -60,7 +60,7 @@ class Director:
 
         for artifact in artifacts:
             # Move artifact
-            artifact.move_next()
+            artifact.move_next(max_x, max_y)
             # Resolves collision
             if player.get_position().equals(artifact.get_position()):
                 # I think this one should be get_value()
