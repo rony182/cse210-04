@@ -1,3 +1,5 @@
+from time import sleep
+
 class Director:
     """A person who directs the game. 
     
@@ -55,11 +57,22 @@ class Director:
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         player.move_next(max_x, max_y)
-        
+
         for artifact in artifacts:
+            # Move artifact
+            artifact.move_next()
+            # Resolves collision
             if player.get_position().equals(artifact.get_position()):
-                message = artifact.get_message()
-                banner.set_text(message)    
+                # I think this one should be get_value()
+                # message = artifact.get_message()
+                value = artifact.get_value()
+                # banner.set_text(message)    
+                # Get the banner text as an int
+                points = int(banner.get_text())
+                # Add the new value (rock or gem)
+                points += value
+                # Update banner's text
+                banner.set_text(str(points))
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.

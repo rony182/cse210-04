@@ -72,6 +72,8 @@ def main():
         artifact.set_font_size(FONT_SIZE)
         artifact.set_color(color)
         artifact.set_position(position)
+        # Added velocity for artifact
+        artifact.set_velocity(Point(0, -1))
         cast.add_actor("artifacts", artifact)
     
     # Start the game

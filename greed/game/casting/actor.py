@@ -73,7 +73,9 @@ class Actor:
             max_y (int): The maximum y value.
         """
         x = (self._position.get_x() + self._velocity.get_x()) % max_x
-        y = max_y - 15
+        # y = max_y - 15
+        # Left as before, artifacts move in the y axis
+        y = (self._position.get_y() + self._velocity.get_y()) % max_y 
         self._position = Point(x, y)
 
     def set_color(self, color):
