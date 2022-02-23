@@ -15,10 +15,10 @@ from game.shared.point import Point
 
 
 FRAME_RATE = 12
-MAX_X = 900
-MAX_Y = 600
+MAX_X = 600
+MAX_Y = 450
 CELL_SIZE = 15
-FONT_SIZE = 20
+FONT_SIZE = 15
 COLS = 60
 ROWS = 40
 CAPTION = "Greed"
